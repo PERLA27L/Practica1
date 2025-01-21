@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="/login"></ion-back-button>
+    </ion-buttons>
     <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,5 +14,70 @@
     </ion-toolbar>
   </ion-header>
 
-  
+    <form (ngSubmit)="registro(registroForm)" #registroForm="ngForm"></form>
+
+<form>
+  <ion-item>
+    <ion-input  type="nom"
+    label="Nombre"
+    labelPlacement="floating"
+    placeholder=""
+    errorText=""
+    [ngModel]="nombre"
+    nombre
+    name="nombre"
+    required
+   ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input
+    type="apellidos"
+    label="Apellidos"
+    labelPlacement="floating"
+    placeholder=""
+    errorText=""
+    [ngModel]="apellidos"
+    aellidos
+    name="apellidos"
+    required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="tel"
+    label="Telefono"
+    labelPlacement="floating"
+    placeholder="000-000-0000"
+    errorText="Telefono invalido"
+    [ngModel]="telefono"
+    telefono
+    name="telefono"
+    required
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="email"
+    label="Email"
+    labelPlacement="floating"
+    placeholder="email@domain.com"
+    errorText="El correo electronico es invalido"
+    [ngModel]="email"
+    email
+    name="email"
+    required
+    ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="password"
+    label="Password"
+    labelPlacement="floating"
+    placeholder=""
+    errorText="El contraseña invalida"
+    [ngModel]="password"
+    password
+    name="password"
+    required
+    ></ion-input>
+  </ion-item>
+
+  <ion-button routerLink="/login"> Guardar </ion-button>
+  </form>
 </ion-content>

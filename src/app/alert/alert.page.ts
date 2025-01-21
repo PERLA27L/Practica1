@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './alert.page.html',
   styleUrls: ['./alert.page.scss'],
   standalone: false,
+
 })
 export class AlertPage implements OnInit {
 

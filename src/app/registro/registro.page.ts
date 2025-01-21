@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro',
@@ -8,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroPage implements OnInit {
 
-  constructor() { }
+  nombre: string = '';
+  apellidos: string = '';
+  telefono: string = '';
+  email: string = '';
+  password: string = '';
+
+  constructor(private navController: NavController,) {
+  }
 
   ngOnInit() {
+  }
+
+  registro(form: NgForm){
+    console.log(form.value);
+    console.log(form.valid);
+    console.log(form.invalid);
+
+    if(form.invalid) {
+      this.navController.navigateBack('/login');
+    }
   }
 
 }
