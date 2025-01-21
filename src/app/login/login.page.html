@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-avatar class="ion-text-center">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-input label="Usuario" labelPlacement="floating" placeholder="Enter text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="email" label="Email" type="email" placeholder="email@domain.com"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="password" type="password" label="Password" value="NeverGonnaGiveYouUp">
+      <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+    </ion-input>
+  </ion-item>
+
+  <ion-button (click)="login()"> Guardar </ion-button>
+
+  <ion-text>
+    <p>¿No tienes cuenta? <a routerLink="/registro"> Registrate </a></p>
+  </ion-text>
+
+</ion-content>
