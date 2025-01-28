@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Llamadas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Llamadas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let dsm of llamadas" [button]="true">
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="Avatar" [src]="dsm.avatar" />
+      </ion-avatar>
+      <ion-label>
+        <h3>{{ dsm.name }}</h3>
+        <p>{{ dsm.date}}</p>
+        <p>{{ dsm.time}}</p>
+      </ion-label>
+      <div class="metadata-end-wrapper" slot="end">
+        <ion-icon name="call"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

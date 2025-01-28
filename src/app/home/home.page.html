@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>WhatsApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Cabecera adicional para el modo condensado -->
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">WhatsApp</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Lista de chats -->
+  <ion-list>
+    <ion-searchbar placeholder="Pregunta a Meta AI o buscar"></ion-searchbar>
+    <ion-item *ngFor="let dsm of chats" [button]="true">
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="Avatar" [src]="dsm.avatar" />
+      </ion-avatar>
+      <ion-label>
+        <h3>{{ dsm.name }}</h3>
+        <p>{{ dsm.message }}</p>
+      </ion-label>
+      <div class="metadata-end-wrapper" slot="end">
+        <ion-note color="medium">{{ dsm.time }}</ion-note>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
